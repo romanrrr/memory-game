@@ -9,11 +9,24 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </FrameLayout>
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/adView">
+        </FrameLayout>
+        <com.appsgeyser.sdk.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/popup_container"

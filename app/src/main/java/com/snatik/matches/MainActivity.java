@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
 
+import com.appsgeyser.sdk.AppsgeyserSDK;
+import com.appsgeyser.sdk.ads.AdView;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.Engine;
 import com.snatik.matches.engine.ScreenController;
@@ -18,6 +20,8 @@ import com.snatik.matches.utils.Utils;
 public class MainActivity extends FragmentActivity {
 
 	private ImageView mBackgroundImage;
+	private AdView adView;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +46,29 @@ public class MainActivity extends FragmentActivity {
 		// set menu
 		ScreenController.getInstance().openScreen(Screen.MENU);
 
+		AppsgeyserSDK.takeOff(this,
+				getString(R.string.widgetID),
+				getString(R.string.app_metrica_on_start_event),
+				getString(R.string.template_version));
+		adView = findViewById(R.id.adView);
+	}
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+		AppsgeyserSDK.onPause(this);
+		if (adView != null) {
+			adView.onPause();
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		AppsgeyserSDK.onResume(this);
+		if (adView != null) {
+			adView.onResume();//into onResume()
+		}
 	}
 
 	@Override
