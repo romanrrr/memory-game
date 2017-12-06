@@ -129,7 +129,7 @@ public class Engine extends EventObserverAdapter {
 			protected TransitionDrawable doInBackground(Void... params) {
 				Drawable backgrounds[] = new Drawable[2];
 				backgrounds[0] = defaultBackground;
-				backgrounds[1] = Config.createDrawable(Shared.context, mSelectedTheme.backgroundImage);
+				backgrounds[1] = mSelectedTheme.backgroundImage.isEmpty() ? defaultBackground : Config.createDrawable(Shared.context, mSelectedTheme.backgroundImage);
 				TransitionDrawable crossfader = new TransitionDrawable(backgrounds);
 				return crossfader;
 			}

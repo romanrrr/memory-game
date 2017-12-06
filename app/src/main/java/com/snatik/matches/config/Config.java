@@ -86,7 +86,7 @@ public class Config {
     private Theme readTheme(Context context, JSONObject jsonObject) throws JSONException {
         Theme theme = new Theme();
         theme.name = jsonObject.getString("name");
-        theme.backgroundImage = jsonObject.getString("backgroundImageUrl");
+        theme.backgroundImage = jsonObject.getString("backgroundImage");
         theme.themeLogo = jsonObject.getString("themeLogo");
         theme.tileBack = jsonObject.getString("tileBack");
         theme.tileFront = jsonObject.getString("tileFront");
