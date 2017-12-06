@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.snatik.matches.R;
@@ -24,6 +25,7 @@ public class TileView extends FrameLayout {
 
 	private RelativeLayout mTopImage;
 	private ImageView mTileImage;
+	private LinearLayout tileFront;
 	private boolean mFlippedDown = true;
 
 	public TileView(Context context) {
@@ -42,6 +44,7 @@ public class TileView extends FrameLayout {
 	protected void onFinishInflate() {
 		super.onFinishInflate();
 		mTopImage = (RelativeLayout) findViewById(R.id.image_top);
+		tileFront = (LinearLayout) findViewById(R.id.tile_front);
 		mTileImage = (ImageView) findViewById(R.id.image);
 	}
 
@@ -54,7 +57,7 @@ public class TileView extends FrameLayout {
 			mTopImage.setBackgroundDrawable(Config.createDrawable(Shared.context, theme.tileBack));
 		}
 		if(theme.tileFront != null && !theme.tileFront.isEmpty()) {
-			mTileImage.setBackgroundDrawable(Config.createDrawable(Shared.context, theme.tileFront));
+			tileFront.setBackgroundDrawable(Config.createDrawable(Shared.context, theme.tileFront));
 		}
 	}
 
