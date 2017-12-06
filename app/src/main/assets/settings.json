@@ -37,7 +37,7 @@
     },
     {
       "name": "Pucheen",
-      "backgroundImageUrl": "uploaded_data\/animals\/animals_background.jpg",
+      "backgroundImage": "uploaded_data\/animals\/animals_background.jpg",
       "themeLogo": "uploaded_data\/pucheen\/1.png",
       "tileBack": "uploaded_data\/window_panel_main.png",
       "tileFront": "uploaded_data\/window_panel_main.png",
