@@ -1,6 +1,7 @@
 {
   "logo": "uploaded_data\/logo.png",
   "backgroundImage": "uploaded_data\/background.png",
+
   "playButton": "uploaded_data\/play.png",
   "backButton": "uploaded_data\/back.png",
   "soundButton": "uploaded_data\/sound.png",
@@ -15,10 +16,10 @@
   "themes": [
     {
       "name": "Animals",
-      "backgroundImageUrl": "uploaded_data\/animals\/animals_background.jpg",
+      "backgroundImage": "",
       "themeLogo": "uploaded_data\/animals\/animals_10.png",
-      "tileBack": "uploaded_data\/window_panel_main.png",
-      "tileFront": "uploaded_data\/window_panel_main.png",
+      "tileBack": "",
+      "tileFront": "",
       "tiles": [
         {
           "tileImage": "uploaded_data\/animals\/animals_10.png"
@@ -56,8 +57,8 @@
       ]
     }
   ],
-  "name": "Indian Browser",
-  "template": "browserV5",
+  "name": "Find The Pair",
+  "template": "findThePair",
   "icon": "uploaded_data\/icon.png",
   "themeColors": {
     "colorPrimary": "#3f51b5",
