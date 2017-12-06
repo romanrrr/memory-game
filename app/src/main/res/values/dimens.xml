@@ -38,12 +38,12 @@
     
     <!-- popup won -->
     <dimen name="popup_won_width">240dp</dimen>
-    <dimen name="popup_won_height">300dp</dimen>
+    <dimen name="popup_won_height">240dp</dimen>
     <dimen name="popup_button_back">75dp</dimen>
     <dimen name="popup_button_back_left">30dp</dimen>
     <dimen name="popup_button_back_bottom">10dp</dimen>
     <dimen name="popup_button_star_size">57dp</dimen>
-    <dimen name="popup_button_star_margin_top">48dp</dimen>
+    <dimen name="popup_button_star_margin_top">80dp</dimen>
     <dimen name="popup_button_star_margin_1">25dp</dimen>
     <dimen name="popup_button_star_margin_2">90dp</dimen>
     <dimen name="popup_button_star_margin_3">156dp</dimen>

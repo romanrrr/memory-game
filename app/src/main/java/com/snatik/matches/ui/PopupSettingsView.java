@@ -2,6 +2,7 @@ package com.snatik.matches.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.snatik.matches.GameApplication;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
@@ -28,7 +30,12 @@ public class PopupSettingsView extends LinearLayout {
 	public PopupSettingsView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setOrientation(LinearLayout.VERTICAL);
-		setBackgroundResource(R.drawable.settings_popup);
+		Drawable settingsPopup = Shared.config.getSettingsPopup();
+		if(settingsPopup != null){
+			setBackgroundDrawable(settingsPopup);
+		}else {
+			setBackgroundResource(R.drawable.settings_popup);
+		}
 		LayoutInflater.from(getContext()).inflate(R.layout.popup_settings_view, this, true);
 		mSoundText = (TextView) findViewById(R.id.sound_off_text);
 		TextView rateView = (TextView) findViewById(R.id.rate_text);
@@ -42,7 +49,10 @@ public class PopupSettingsView extends LinearLayout {
 				setMusicButton();
 			}
 		});
+		ImageView rateIcon = (ImageView) findViewById(R.id.rate_icon);
+		rateIcon.setImageDrawable(Shared.config.getRateButton());
 		View rate = findViewById(R.id.rate);
+
 		rate.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -60,10 +70,10 @@ public class PopupSettingsView extends LinearLayout {
 	private void setMusicButton() {
 		if (Music.OFF) {
 			mSoundText.setText("Sound OFF");
-			mSoundImage.setImageResource(R.drawable.button_music_off);
+			mSoundImage.setImageDrawable(Shared.config.getCancelButton());
 		} else {
 			mSoundText.setText("Sound ON");
-			mSoundImage.setImageResource(R.drawable.button_music_on);
+			mSoundImage.setImageDrawable(Shared.config.getSoundButton());
 		}
 	}
 }

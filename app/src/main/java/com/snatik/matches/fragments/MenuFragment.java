@@ -16,6 +16,7 @@ import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.snatik.matches.GameApplication;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
@@ -28,7 +29,6 @@ public class MenuFragment extends Fragment {
 	private ImageView mTitle;
 	private ImageView mStartGameButton;
 	private ImageView mStartButtonLights;
-	private ImageView mTooltip;
 	private ImageView mSettingsGameButton;
 	private ImageView mGooglePlayGameButton;
 
@@ -36,8 +36,13 @@ public class MenuFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.menu_fragment, container, false);
 		mTitle = (ImageView) view.findViewById(R.id.title);
+		mTitle.setImageDrawable(((GameApplication)getActivity().getApplication()).getConfig().getLogo());
 		mStartGameButton = (ImageView) view.findViewById(R.id.start_game_button);
+		mStartGameButton.setImageDrawable(((GameApplication)getActivity().getApplication()).getConfig().getPlayButton());
+
 		mSettingsGameButton = (ImageView) view.findViewById(R.id.settings_game_button);
+		mSettingsGameButton.setImageDrawable(((GameApplication)getActivity().getApplication()).getConfig().getSettingsButton());
+
 		mSettingsGameButton.setSoundEffectsEnabled(false);
 		mSettingsGameButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -53,7 +58,6 @@ public class MenuFragment extends Fragment {
 			}
 		});
 		mStartButtonLights = (ImageView) view.findViewById(R.id.start_game_button_lights);
-		mTooltip = (ImageView) view.findViewById(R.id.tooltip);
 		mStartGameButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -70,7 +74,6 @@ public class MenuFragment extends Fragment {
 		});
 
 		startLightsAnimation();
-		startTootipAnimation();
 
 		// play background music
 		Music.playBackgroundMusic();
@@ -88,10 +91,6 @@ public class MenuFragment extends Fragment {
 		ObjectAnimator lightsAnimatorX = ObjectAnimator.ofFloat(mStartButtonLights, "scaleX", 0f);
 		ObjectAnimator lightsAnimatorY = ObjectAnimator.ofFloat(mStartButtonLights, "scaleY", 0f);
 
-		// tooltip
-		ObjectAnimator tooltipAnimator = ObjectAnimator.ofFloat(mTooltip, "alpha", 0f);
-		tooltipAnimator.setDuration(100);
-
 		// settings button
 		ObjectAnimator settingsAnimator = ObjectAnimator.ofFloat(mSettingsGameButton, "translationY", Utils.px(120));
 		settingsAnimator.setInterpolator(new AccelerateInterpolator(2));
@@ -108,30 +107,11 @@ public class MenuFragment extends Fragment {
 		startButtonAnimator.setDuration(300);
 
 		AnimatorSet animatorSet = new AnimatorSet();
-		animatorSet.playTogether(titleAnimator, lightsAnimatorX, lightsAnimatorY, tooltipAnimator, settingsAnimator, googlePlayAnimator, startButtonAnimator);
+		animatorSet.playTogether(titleAnimator, lightsAnimatorX, lightsAnimatorY, settingsAnimator, googlePlayAnimator, startButtonAnimator);
 		animatorSet.addListener(adapter);
 		animatorSet.start();
 	}
 
-	private void startTootipAnimation() {
-		ObjectAnimator scaleY = ObjectAnimator.ofFloat(mTooltip, "scaleY", 0.8f);
-		scaleY.setDuration(200);
-		ObjectAnimator scaleYBack = ObjectAnimator.ofFloat(mTooltip, "scaleY", 1f);
-		scaleYBack.setDuration(500);
-		scaleYBack.setInterpolator(new BounceInterpolator());
-		final AnimatorSet animatorSet = new AnimatorSet();
-		animatorSet.setStartDelay(1000);
-		animatorSet.playSequentially(scaleY, scaleYBack);
-		animatorSet.addListener(new AnimatorListenerAdapter() {
-			@Override
-			public void onAnimationEnd(Animator animation) {
-				animatorSet.setStartDelay(2000);
-				animatorSet.start();
-			}
-		});
-		mTooltip.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-		animatorSet.start();
-	}
 
 	private void startLightsAnimation() {
 		ObjectAnimator animator = ObjectAnimator.ofFloat(mStartButtonLights, "rotation", 0f, 360f);

@@ -31,7 +31,7 @@
             android:layout_height="35dp"
             android:layout_marginTop="-40dp"
             android:layout_marginBottom="18dp"
-            android:background="@drawable/time_border"
+            android:background="@drawable/window_panel_pause"
             android:id="@+id/time_difficulty_1"
             android:textSize="17sp"/>
 
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginTop="-40dp"
-            android:background="@drawable/time_border"
+            android:background="@drawable/window_panel_pause"
             android:id="@+id/time_difficulty_4"
             android:textSize="17sp"
             />
@@ -75,7 +75,7 @@
             android:layout_height="35dp"
             android:layout_marginTop="-40dp"
             android:layout_marginBottom="18dp"
-            android:background="@drawable/time_border"
+            android:background="@drawable/window_panel_pause"
             android:id="@+id/time_difficulty_2"
             android:textSize="17sp"
           />
@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginTop="-40dp"
-            android:background="@drawable/time_border"
+            android:background="@drawable/window_panel_pause"
             android:id="@+id/time_difficulty_5"
             android:textSize="17sp"
             />
@@ -119,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginTop="-40dp"
-            android:background="@drawable/time_border"
+            android:background="@drawable/window_panel_pause"
             android:layout_marginBottom="18dp"
             android:id="@+id/time_difficulty_3"
             android:textSize="17sp"/>
@@ -134,7 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginTop="-40dp"
-            android:background="@drawable/time_border"
+            android:background="@drawable/window_panel_pause"
             android:id="@+id/time_difficulty_6"
             android:textSize="17sp"
             />

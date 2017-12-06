@@ -24,6 +24,7 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 
 		Shared.context = getApplicationContext();
+		Shared.config = ((GameApplication)getApplication()).getConfig();
 		Shared.engine = Engine.getInstance();
 		Shared.eventBus = EventBus.getInstance();
 
@@ -33,6 +34,7 @@ public class MainActivity extends FragmentActivity {
 		Shared.activity = this;
 		Shared.engine.start();
 		Shared.engine.setBackgroundImageView(mBackgroundImage);
+		Shared.engine.setDefaultBackground(((GameApplication)getApplication()).getConfig().getBackgroundImage());
 
 		// set background
 		setBackgroundImage();
@@ -62,10 +64,10 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	private void setBackgroundImage() {
-		Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
+		/*Bitmap bitmap = Utils.scaleDown(, Utils.screenWidth(), Utils.screenHeight());
 		bitmap = Utils.crop(bitmap, Utils.screenHeight(), Utils.screenWidth());
-		bitmap = Utils.downscaleBitmap(bitmap, 2);
-		mBackgroundImage.setImageBitmap(bitmap);
+		bitmap = Utils.downscaleBitmap(bitmap, 2);*/
+		mBackgroundImage.setImageDrawable(((GameApplication)getApplication()).getConfig().getBackgroundImage());
 	}
 
 }

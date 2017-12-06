@@ -60,31 +60,37 @@ public class DifficultySelectFragment extends Fragment {
         text1.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         text1.setTypeface(type);
         text1.setText(getBestTimeForStage(theme.id, 1));
+        text1.setBackgroundDrawable(Shared.config.getPanel());
 
         TextView text2 = (TextView) view.findViewById(R.id.time_difficulty_2);
         text2.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         text2.setTypeface(type);
         text2.setText(getBestTimeForStage(theme.id, 2));
+        text2.setBackgroundDrawable(Shared.config.getPanel());
 
         TextView text3 = (TextView) view.findViewById(R.id.time_difficulty_3);
         text3.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         text3.setTypeface(type);
         text3.setText(getBestTimeForStage(theme.id, 3));
+        text3.setBackgroundDrawable(Shared.config.getPanel());
 
         TextView text4 = (TextView) view.findViewById(R.id.time_difficulty_4);
         text4.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         text4.setTypeface(type);
         text4.setText(getBestTimeForStage(theme.id, 4));
+        text4.setBackgroundDrawable(Shared.config.getPanel());
 
         TextView text5 = (TextView) view.findViewById(R.id.time_difficulty_5);
         text5.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         text5.setTypeface(type);
         text5.setText(getBestTimeForStage(theme.id, 5));
+        text5.setBackgroundDrawable(Shared.config.getPanel());
 
         TextView text6 = (TextView) view.findViewById(R.id.time_difficulty_6);
         text6.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         text6.setTypeface(type);
         text6.setText(getBestTimeForStage(theme.id, 6));
+        text6.setBackgroundDrawable(Shared.config.getPanel());
 
         return view;
 

@@ -1,17 +1,15 @@
 package com.snatik.matches.engine;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.widget.ImageView;
 
-import com.snatik.matches.R;
 import com.snatik.matches.common.Memory;
 import com.snatik.matches.common.Music;
 import com.snatik.matches.common.Shared;
+import com.snatik.matches.config.Config;
 import com.snatik.matches.engine.ScreenController.Screen;
 import com.snatik.matches.events.EventObserverAdapter;
 import com.snatik.matches.events.engine.FlipDownCardsEvent;
@@ -29,10 +27,9 @@ import com.snatik.matches.model.BoardConfiguration;
 import com.snatik.matches.model.Game;
 import com.snatik.matches.model.GameState;
 import com.snatik.matches.themes.Theme;
-import com.snatik.matches.themes.Themes;
+import com.snatik.matches.themes.Tile;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Clock;
-import com.snatik.matches.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,6 +45,7 @@ public class Engine extends EventObserverAdapter {
 	private ScreenController mScreenController;
 	private Theme mSelectedTheme;
 	private ImageView mBackgroundImage;
+	private Drawable defaultBackground;
 	private Handler mHandler;
 
 	private Engine() {
@@ -96,19 +94,7 @@ public class Engine extends EventObserverAdapter {
 		if (drawable != null) {
 			((TransitionDrawable) drawable).reverseTransition(2000);
 		} else {
-			new AsyncTask<Void, Void, Bitmap>() {
-
-				@Override
-				protected Bitmap doInBackground(Void... params) {
-					Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
-					return bitmap;
-				}
-
-				protected void onPostExecute(Bitmap bitmap) {
-					mBackgroundImage.setImageBitmap(bitmap);
-				};
-
-			}.execute();
+			mBackgroundImage.setImageDrawable(defaultBackground);
 		}
 	}
 
@@ -141,12 +127,9 @@ public class Engine extends EventObserverAdapter {
 
 			@Override
 			protected TransitionDrawable doInBackground(Void... params) {
-				Bitmap bitmap = Utils.scaleDown(R.drawable.background, Utils.screenWidth(), Utils.screenHeight());
-				Bitmap backgroundImage = Themes.getBackgroundImage(mSelectedTheme);
-				backgroundImage = Utils.crop(backgroundImage, Utils.screenHeight(), Utils.screenWidth());
 				Drawable backgrounds[] = new Drawable[2];
-				backgrounds[0] = new BitmapDrawable(Shared.context.getResources(), bitmap);
-				backgrounds[1] = new BitmapDrawable(Shared.context.getResources(), backgroundImage);
+				backgrounds[0] = defaultBackground;
+				backgrounds[1] = Config.createDrawable(Shared.context, mSelectedTheme.backgroundImage);
 				TransitionDrawable crossfader = new TransitionDrawable(backgrounds);
 				return crossfader;
 			}
@@ -179,7 +162,6 @@ public class Engine extends EventObserverAdapter {
 	private void arrangeBoard() {
 		BoardConfiguration boardConfiguration = mPlayingGame.boardConfiguration;
 		BoardArrangment boardArrangment = new BoardArrangment();
-
 		// build pairs
 		// result {0,1,2,...n} // n-number of tiles
 		List<Integer> ids = new ArrayList<Integer>();
@@ -191,20 +173,14 @@ public class Engine extends EventObserverAdapter {
 		Collections.shuffle(ids);
 
 		// place the board
-		List<String> tileImageUrls = mPlayingGame.theme.tileImageUrls;
-		Collections.shuffle(tileImageUrls);
-		boardArrangment.pairs = new HashMap<Integer, Integer>();
-		boardArrangment.tileUrls = new HashMap<Integer, String>();
+		List<Tile> tileImageList = mPlayingGame.theme.tileList;
+		Collections.shuffle(tileImageList);
+		boardArrangment.tileMap = new HashMap<>();
 		int j = 0;
-		for (int i = 0; i < ids.size(); i++) {
+		for (int i = 0; i < boardConfiguration.numTiles; i++) {
 			if (i + 1 < ids.size()) {
-				// {4,10}, {2,39}, ...
-				boardArrangment.pairs.put(ids.get(i), ids.get(i + 1));
-				// {10,4}, {39,2}, ...
-				boardArrangment.pairs.put(ids.get(i + 1), ids.get(i));
-				// {4,
-				boardArrangment.tileUrls.put(ids.get(i), tileImageUrls.get(j));
-				boardArrangment.tileUrls.put(ids.get(i + 1), tileImageUrls.get(j));
+				boardArrangment.tileMap.put(ids.get(i), tileImageList.get(j % tileImageList.size()));
+				boardArrangment.tileMap.put(ids.get(i + 1), tileImageList.get(j % tileImageList.size()));
 				i++;
 				j++;
 			}
@@ -286,5 +262,9 @@ public class Engine extends EventObserverAdapter {
 
 	public void setBackgroundImageView(ImageView backgroundImage) {
 		mBackgroundImage = backgroundImage;
+	}
+
+	public void setDefaultBackground(Drawable defaultBackground) {
+		this.defaultBackground = defaultBackground;
 	}
 }

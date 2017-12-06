@@ -11,7 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="@dimen/popup_button_back_bottom"
         android:layout_marginLeft="@dimen/popup_button_back_left"
-        android:src="@drawable/button_back" />
+        android:src="@drawable/cancel" />
 
     <ImageView
         android:id="@+id/button_next"
@@ -21,7 +21,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/popup_button_back_bottom"
         android:layout_marginRight="@dimen/popup_button_back_left"
-        android:src="@drawable/button_again" />
+        android:src="@drawable/play" />
 
     <ImageView
         android:id="@+id/star_1"
@@ -71,7 +71,8 @@
         android:shadowRadius="4"
         android:text="00:60"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/popup_button_time_size" />
+        android:textSize="@dimen/popup_button_time_size"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/score_bar_text"
@@ -88,6 +89,7 @@
         android:shadowRadius="4"
         android:text="240"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/popup_button_time_size" />
+        android:textSize="@dimen/popup_button_time_size"
+        android:visibility="gone"/>
 
 </RelativeLayout>

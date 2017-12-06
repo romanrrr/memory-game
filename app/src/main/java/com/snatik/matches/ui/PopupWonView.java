@@ -49,7 +49,9 @@ public class PopupWonView extends RelativeLayout {
 		mBackButton = (ImageView) findViewById(R.id.button_back);
 		mNextButton = (ImageView) findViewById(R.id.button_next);
 		FontLoader.setTypeface(context, new TextView[] { mTime, mScore }, Font.GROBOLD);
-		setBackgroundResource(R.drawable.level_complete);
+		setBackgroundDrawable(Shared.config.getWonPanel());
+		mNextButton.setImageDrawable(Shared.config.getPlayButton());
+		mBackButton.setImageDrawable(Shared.config.getBackButton());
 		mHandler = new Handler();
 		
 		mBackButton.setOnClickListener(new View.OnClickListener() {

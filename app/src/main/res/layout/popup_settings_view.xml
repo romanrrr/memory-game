@@ -22,7 +22,7 @@
             android:layout_marginLeft="5dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/button_music_on" />
+            android:src="@drawable/sound" />
 
         <TextView
             android:id="@+id/sound_off_text"
@@ -54,7 +54,8 @@
             android:layout_marginLeft="5dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/button_rate" />
+            android:id="@+id/rate_icon"
+            android:src="@drawable/rate" />
 
         <TextView
             android:id="@+id/rate_text"

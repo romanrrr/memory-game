@@ -16,6 +16,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.snatik.matches.R;
+import com.snatik.matches.common.Shared;
+import com.snatik.matches.config.Config;
+import com.snatik.matches.themes.Theme;
 
 public class TileView extends FrameLayout {
 
@@ -44,6 +47,15 @@ public class TileView extends FrameLayout {
 
 	public void setTileImage(Bitmap bitmap) {
 		mTileImage.setImageBitmap(bitmap);
+	}
+
+	public void applyTheme(Theme theme) {
+		if(theme.tileBack != null) {
+			mTopImage.setBackgroundDrawable(Config.createDrawable(Shared.context, theme.tileBack));
+		}
+		if(theme.tileFront != null) {
+			mTileImage.setBackgroundDrawable(Config.createDrawable(Shared.context, theme.tileFront));
+		}
 	}
 
 	public void flipUp() {

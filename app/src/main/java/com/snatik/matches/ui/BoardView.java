@@ -26,6 +26,7 @@ import com.snatik.matches.events.ui.FlipCardEvent;
 import com.snatik.matches.model.BoardArrangment;
 import com.snatik.matches.model.BoardConfiguration;
 import com.snatik.matches.model.Game;
+import com.snatik.matches.themes.Theme;
 import com.snatik.matches.utils.Utils;
 
 public class BoardView extends LinearLayout {
@@ -36,6 +37,7 @@ public class BoardView extends LinearLayout {
 	private int mScreenHeight;
 	private BoardConfiguration mBoardConfiguration;
 	private BoardArrangment mBoardArrangment;
+	private Theme theme;
 	private Map<Integer, TileView> mViewReference;
 	private List<Integer> flippedUp = new ArrayList<Integer>();
 	private boolean mLocked = false;
@@ -69,6 +71,7 @@ public class BoardView extends LinearLayout {
 	public void setBoard(Game game) {
 		mBoardConfiguration = game.boardConfiguration;
 		mBoardArrangment = game.boardArrangment;
+		theme = game.theme;
 		// calc prefered tiles in width and height
 		int singleMargin = getResources().getDimensionPixelSize(R.dimen.card_margin);
 		float density = getResources().getDisplayMetrics().density;
@@ -119,6 +122,7 @@ public class BoardView extends LinearLayout {
 	private void addTile(final int id, ViewGroup parent) {
 		final TileView tileView = TileView.fromXml(getContext(), parent);
 		tileView.setLayoutParams(mTileLayoutParams);
+		tileView.applyTheme(theme);
 		parent.addView(tileView);
 		parent.setClipChildren(false);
 		mViewReference.put(id, tileView);
