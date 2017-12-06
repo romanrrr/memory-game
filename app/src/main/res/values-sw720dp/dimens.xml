@@ -26,7 +26,9 @@
     <dimen name="difficulty_padding">80dp</dimen>
     <dimen name="difficulty_margin">20dp</dimen>
     <dimen name="difficulty_margin_top">40dp</dimen>
-    
+    <dimen name="diff_view_height">170dp</dimen>
+    <dimen name="diff_text_size">30sp</dimen>
+
     <!-- game -->
     <dimen name="margine_top">70dp</dimen>
     <dimen name="board_padding">20dp</dimen>

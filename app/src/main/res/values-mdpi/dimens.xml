@@ -5,13 +5,13 @@
     <!-- title -->
     <dimen name="title_width">400dp</dimen>
     <dimen name="title_height">120dp</dimen>
-    <dimen name="title_margin_top">50dp</dimen>
+    <dimen name="title_margin_top">20dp</dimen>
     
     <!-- menu buttons -->
-    <dimen name="start_game_button">100dp</dimen>
+    <dimen name="start_game_button">80dp</dimen>
     <dimen name="start_game_button_margin">20dp</dimen>
-    <dimen name="start_game_button_lights">150dp</dimen>
-    <dimen name="settings_game_button">80dp</dimen>
+    <dimen name="start_game_button_lights">120dp</dimen>
+    <dimen name="settings_game_button">60dp</dimen>
     <dimen name="settings_game_button_margin">30dp</dimen>
     <dimen name="tooltip_width">80dp</dimen>
     <dimen name="tooltip_height">35dp</dimen>
@@ -23,11 +23,11 @@
     <dimen name="theme_margin">20dp</dimen>
     
     <!-- difficulty level -->
-    <dimen name="difficulty_padding">40dp</dimen>
+    <dimen name="difficulty_padding">16dp</dimen>
     <dimen name="difficulty_margin">10dp</dimen>
     <dimen name="difficulty_margin_top">20dp</dimen>
-    <dimen name="diff_text_size">22sp</dimen>
-    <dimen name="diff_view_height">130dp</dimen>
+    <dimen name="diff_text_size">16sp</dimen>
+    <dimen name="diff_view_height">116dp</dimen>
 
     <!-- game -->
     <dimen name="margine_top">70dp</dimen>
