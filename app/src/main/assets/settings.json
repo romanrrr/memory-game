@@ -1,6 +1,6 @@
 {
   "logo": "uploaded_data\/logo.png",
-  "backgroundImage": "uploaded_data\/background.png",
+  "backgroundImage": "uploaded_data\/animals\/animals_10.png",
 
   "playButton": "uploaded_data\/play.png",
   "backButton": "uploaded_data\/back.png",
@@ -10,54 +10,54 @@
   "timeBar": "uploaded_data\/time_bar.png",
   "settingsButton": "uploaded_data\/settings.png",
   "settingsPopup": "uploaded_data\/settings_popup.png",
-  "themePopup": "uploaded_data\/window_panel_popup.png",
+  "levelPopup": "uploaded_data\/window_panel_popup.png",
   "panel": "uploaded_data\/window_panel_pause.png",
   "wonPanel": "uploaded_data\/won_panel.png",
-  "themes": [
+  "levels": [
     {
       "name": "Animals",
-      "backgroundImage": "",
-      "themeLogo": "uploaded_data\/animals\/animals_10.png",
+      "levelBackgroundImage": "",
+      "levelLogo": "uploaded_data\/animals\/animals_10.png",
       "tileBack": "",
       "tileFront": "",
       "tiles": [
         {
-          "tileImage": "uploaded_data\/animals\/animals_10.png"
+          "path": "uploaded_data\/animals\/animals_10.png"
         },
         {
-          "tileImage": "uploaded_data\/animals\/animals_11.png"
+          "path": "uploaded_data\/animals\/animals_11.png"
         },
         {
-          "tileImage": "uploaded_data\/animals\/animals_12.png"
+          "path": "uploaded_data\/animals\/animals_12.png"
         },
         {
-          "tileImage": "uploaded_data\/animals\/animals_13.png"
+          "path": "uploaded_data\/animals\/animals_13.png"
         }
       ]
     },
     {
       "name": "Pucheen",
-      "backgroundImage": "uploaded_data\/animals\/animals_background.jpg",
-      "themeLogo": "uploaded_data\/pucheen\/1.png",
+      "levelBackgroundImage": "uploaded_data\/animals\/animals_10.png",
+      "levelLogo": "uploaded_data\/pucheen\/1.png",
       "tileBack": "uploaded_data\/window_panel_main.png",
       "tileFront": "uploaded_data\/window_panel_main.png",
       "tiles": [
         {
-          "tileImage": "uploaded_data\/pucheen\/1.png"
+          "path": "uploaded_data\/pucheen\/1.png"
         },
         {
-          "tileImage": "uploaded_data\/pucheen\/2.png"
+          "path": "uploaded_data\/pucheen\/2.png"
         },
         {
-          "tileImage": "uploaded_data\/pucheen\/3.png"
+          "path": "uploaded_data\/pucheen\/3.png"
         },
         {
-          "tileImage": "uploaded_data\/pucheen\/4.png"
+          "path": "uploaded_data\/pucheen\/4.png"
         }
       ]
     }
   ],
-  "name": "Find The Pair",
+  "name": "FIND PAIRS",
   "template": "findThePair",
   "icon": "uploaded_data\/icon.png",
   "themeColors": {

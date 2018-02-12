@@ -4,6 +4,7 @@ package com.snatik.matches;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.appsgeyser.sdk.AppsgeyserSDK;
@@ -17,7 +18,7 @@ import com.snatik.matches.events.ui.BackGameEvent;
 import com.snatik.matches.ui.PopupManager;
 import com.snatik.matches.utils.Utils;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
 	private ImageView mBackgroundImage;
 	private AdView adView;

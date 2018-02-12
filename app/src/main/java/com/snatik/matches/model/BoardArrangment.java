@@ -28,7 +28,7 @@ public class BoardArrangment {
 	 * @return The Bitmap of the tile
 	 */
 	public Bitmap getTileBitmap(int id, int size) {
-		Bitmap bitmap = ((BitmapDrawable) Config.createDrawable(Shared.context, tileMap.get(id).imageLink)).getBitmap();
+		Bitmap bitmap = ((BitmapDrawable) Shared.config.createDrawable(Shared.context, tileMap.get(id).imageLink)).getBitmap();
 		return Utils.crop(bitmap, size, size);
 	}
 

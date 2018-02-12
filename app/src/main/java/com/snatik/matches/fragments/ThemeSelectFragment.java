@@ -135,7 +135,7 @@ public class ThemeSelectFragment extends Fragment {
 		@Override
 		public void onBindViewHolder(final ThemeAdapter.ViewHolder holder, int position) {
 			Theme theme = themeList.get(position);
-			holder.themeLogo.setImageDrawable(Config.createDrawable(Shared.context, theme.themeLogo));
+			holder.themeLogo.setImageDrawable(Shared.config.createDrawable(Shared.context, theme.themeLogo));
 			holder.name.setText(theme.name);
 
 			if(Shared.config.getThemePopup() != null) {

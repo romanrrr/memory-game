@@ -6,6 +6,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.v4.util.LruCache;
 import android.util.Log;
 
 import com.snatik.matches.R;
@@ -31,24 +33,36 @@ import java.util.List;
 public class Config {
     public static final String CONFIG_PREFERENCES = "ConfigPref";
 
-    List<Theme> themeList;
+    private LruCache<String, Bitmap> mMemoryCache;
 
-    Drawable backgroundImage;
-    Drawable logo;
-    Drawable playButton;
-    Drawable backButton;
-    Drawable soundButton;
-    Drawable rateButton;
-    Drawable cancelButton;
-    Drawable settingsButton;
-    Drawable settingsPopup;
-    Drawable themePopup;
-    Drawable panel;
-    Drawable wonPanel;
-    Drawable timeBar;
+    private void manageCache() {
+        Log.w("cache", "init");
+        mMemoryCache = new LruCache<String, Bitmap>(20 * 1000 * 1000) {
+            @Override
+            protected int sizeOf(String key, Bitmap value) {
+                return value.getByteCount();
+            }
+        };
+    }
+
+    private List<Theme> themeList;
+
+    private Drawable backgroundImage;
+    private Drawable logo;
+    private Drawable playButton;
+    private Drawable backButton;
+    private Drawable soundButton;
+    private Drawable rateButton;
+    private Drawable cancelButton;
+    private Drawable settingsButton;
+    private Drawable settingsPopup;
+    private Drawable themePopup;
+    private Bitmap panel;
+    private Drawable wonPanel;
+    private Drawable timeBar;
 
     public Config(Context context) {
-
+        manageCache();
         try {
             JSONObject settings = new JSONObject(loadSettings(context));
             backgroundImage = createDrawable(context, settings.getString("backgroundImage"));
@@ -60,14 +74,14 @@ public class Config {
             cancelButton = createDrawable(context, settings.getString("cancelButton"));
             settingsButton = createDrawable(context, settings.getString("settingsButton"));
             settingsPopup = createDrawable(context, settings.getString("settingsPopup"));
-            themePopup = createDrawable(context, settings.getString("themePopup"));
-            panel = createDrawable(context, settings.getString("panel"));
+            themePopup = createDrawable(context, settings.getString("levelPopup"));
+            panel = readBitmap(context, settings.getString("panel"));
             wonPanel = createDrawable(context, settings.getString("wonPanel"));
             timeBar = createDrawable(context, settings.getString("timeBar"));
 
             themeList = new ArrayList<>();
 
-            JSONArray themesArray = settings.getJSONArray("themes");
+            JSONArray themesArray = settings.getJSONArray("levels");
             for (int i = 0; i < themesArray.length(); i++) {
                 Theme theme = readTheme(context, themesArray.getJSONObject(i));
                 if (theme.tileList.size() > 0) {
@@ -86,8 +100,8 @@ public class Config {
     private Theme readTheme(Context context, JSONObject jsonObject) throws JSONException {
         Theme theme = new Theme();
         theme.name = jsonObject.getString("name");
-        theme.backgroundImage = jsonObject.getString("backgroundImage");
-        theme.themeLogo = jsonObject.getString("themeLogo");
+        theme.backgroundImage = jsonObject.getString("levelBackgroundImage");
+        theme.themeLogo = jsonObject.getString("levelLogo");
         theme.tileBack = jsonObject.getString("tileBack");
         theme.tileFront = jsonObject.getString("tileFront");
 
@@ -96,7 +110,7 @@ public class Config {
         for (int i = 0; i < tilesArray.length(); i++) {
             Tile tile = new Tile();
             tile.id = i;
-            tile.imageLink = tilesArray.getJSONObject(i).getString("tileImage");
+            tile.imageLink = tilesArray.getJSONObject(i).getString("path");
             tileList.add(tile);
         }
         theme.tileList = tileList;
@@ -105,13 +119,35 @@ public class Config {
 
     //------------------------------------------------------
 
-    public static Drawable createDrawable(Context context, String link) {
+    public Drawable createDrawable(Context context, String link) {
         if (!link.equals("")) {
-            Bitmap b = null;
             try {
-                b = BitmapFactory.decodeStream(context.getAssets().open(link));
-                b.setDensity(Bitmap.DENSITY_NONE);
+                Bitmap b = mMemoryCache.get(link);
+                if (b == null) {
+                    b = BitmapFactory.decodeStream(context.getAssets().open(link));
+                    b.setDensity(Bitmap.DENSITY_NONE);
+                    mMemoryCache.put(link, b);
+                }
                 return new BitmapDrawable(context.getResources(), b);
+            } catch (FileNotFoundException e) {
+                Log.d("Config", "Image " + link + " not found");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
+    public Bitmap readBitmap(Context context, String link) {
+        if (!link.equals("")) {
+            try {
+                Bitmap b = mMemoryCache.get(link);
+                if (b == null) {
+                    b = BitmapFactory.decodeStream(context.getAssets().open(link));
+                    b.setDensity(Bitmap.DENSITY_NONE);
+                    mMemoryCache.put(link, b);
+                }
+                return b;
             } catch (FileNotFoundException e) {
                 Log.d("Config", "Image " + link + " not found");
             } catch (IOException e) {
@@ -156,7 +192,7 @@ public class Config {
     }
 
     public Drawable getPanel() {
-        return panel != null ? panel : Shared.context.getResources().getDrawable(R.drawable.window_panel_pause);
+        return panel != null ? new BitmapDrawable(Shared.context.getResources(), panel) : Shared.context.getResources().getDrawable(R.drawable.window_panel_pause);
     }
 
     public Drawable getWonPanel() {

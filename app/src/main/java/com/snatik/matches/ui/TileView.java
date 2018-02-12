@@ -54,10 +54,10 @@ public class TileView extends FrameLayout {
 
 	public void applyTheme(Theme theme) {
 		if(theme.tileBack != null && !theme.tileBack.isEmpty()) {
-			mTopImage.setBackgroundDrawable(Config.createDrawable(Shared.context, theme.tileBack));
+			mTopImage.setBackgroundDrawable(Shared.config.createDrawable(Shared.context, theme.tileBack));
 		}
 		if(theme.tileFront != null && !theme.tileFront.isEmpty()) {
-			tileFront.setBackgroundDrawable(Config.createDrawable(Shared.context, theme.tileFront));
+			tileFront.setBackgroundDrawable(Shared.config.createDrawable(Shared.context, theme.tileFront));
 		}
 	}
 
