@@ -7,8 +7,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-import com.appsgeyser.sdk.AppsgeyserSDK;
-import com.appsgeyser.sdk.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.engine.Engine;
 import com.snatik.matches.engine.ScreenController;
@@ -47,29 +48,11 @@ public class MainActivity extends AppCompatActivity {
 		// set menu
 		ScreenController.getInstance().openScreen(Screen.MENU);
 
-		AppsgeyserSDK.takeOff(this,
-				getString(R.string.widgetID),
-				getString(R.string.app_metrica_on_start_event),
-				getString(R.string.template_version));
+		MobileAds.initialize(this, getString(R.string.admobAppId));
+
 		adView = findViewById(R.id.adView);
-	}
-
-	@Override
-	protected void onPause() {
-		super.onPause();
-		AppsgeyserSDK.onPause(this);
-		if (adView != null) {
-			adView.onPause();
-		}
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		AppsgeyserSDK.onResume(this);
-		if (adView != null) {
-			adView.onResume();//into onResume()
-		}
+		AdRequest adRequest = new AdRequest.Builder().build();
+		adView.loadAd(adRequest);
 	}
 
 	@Override

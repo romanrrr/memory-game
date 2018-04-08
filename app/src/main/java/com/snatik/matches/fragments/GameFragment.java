@@ -2,6 +2,7 @@ package com.snatik.matches.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.appsgeyser.sdk.AppsgeyserSDK;
-import com.appsgeyser.sdk.ads.FullScreenBanner;
-import com.appsgeyser.sdk.ads.IFullScreenBannerListener;
-import com.appsgeyser.sdk.configuration.Constants;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Shared;
 import com.snatik.matches.events.engine.FlipDownCardsEvent;
@@ -33,6 +33,7 @@ public class GameFragment extends BaseFragment {
     private TextView mTime;
     private ImageView mTimeImage;
     private LinearLayout ads;
+    InterstitialAd  mInterstitialAd;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,6 +54,10 @@ public class GameFragment extends BaseFragment {
         Shared.eventBus.listen(FlipDownCardsEvent.TYPE, this);
         Shared.eventBus.listen(HidePairCardsEvent.TYPE, this);
         Shared.eventBus.listen(GameWonEvent.TYPE, this);
+
+        mInterstitialAd = new InterstitialAd(getActivity());
+        mInterstitialAd.setAdUnitId(getString(R.string.admobInterstitialId));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         return view;
     }
@@ -98,31 +103,40 @@ public class GameFragment extends BaseFragment {
 
     @Override
     public void onEvent(final GameWonEvent event) {
-        FullScreenBanner fullScreenBanner = AppsgeyserSDK
-                .getFullScreenBanner(getActivity());
-        fullScreenBanner.setListener(new IFullScreenBannerListener() {
-            @Override
-            public void onLoadStarted() {
 
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
             }
 
             @Override
-            public void onLoadFinished(FullScreenBanner fullScreenBanner) {
-                fullScreenBanner.show();
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
             }
 
             @Override
-            public void onAdFailedToLoad(Context context, String s) {
-                showWonPopup(event);
+            public void onAdOpened() {
+                // Code to be executed when the ad is displayed.
             }
 
             @Override
-            public void onAdHided(Context context, String s) {
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app.
+            }
+
+            @Override
+            public void onAdClosed() {
                 showWonPopup(event);
             }
         });
-		fullScreenBanner.load(Constants.BannerLoadTags.ON_START);
 
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+            showWonPopup(event);
+        }
     }
 
     private void showWonPopup(final GameWonEvent event){

@@ -12,11 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.BounceInterpolator;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.appsgeyser.sdk.AppsgeyserSDK;
 import com.snatik.matches.GameApplication;
 import com.snatik.matches.R;
 import com.snatik.matches.common.Music;
@@ -40,33 +38,9 @@ public class MenuFragment extends Fragment {
 		mTitle = (ImageView) view.findViewById(R.id.title);
 		mTitle.setImageDrawable(((GameApplication)getActivity().getApplication()).getConfig().getLogo());
 		final ImageView aboutButton = (ImageView) view.findViewById(R.id.about);
-		AppsgeyserSDK.isAboutDialogEnabled(getActivity(), new AppsgeyserSDK.OnAboutDialogEnableListener() {
-
-			@Override
-			public void onDialogEnableReceived(boolean enabled) {
-				aboutButton.setVisibility(enabled ? View.VISIBLE  : View.GONE);
-			}
-		});
-		aboutButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				AppsgeyserSDK.showAboutDialog(getActivity());
-			}
-		});
-
+		aboutButton.setVisibility( View.GONE);
 		offerwallButton = (ImageView) view.findViewById(R.id.offer_wall);
-		AppsgeyserSDK.isOfferWallEnabled(getActivity(), new AppsgeyserSDK.OfferWallEnabledListener() {
-			@Override
-			public void isOfferWallEnabled(boolean enabled) {
-				offerwallButton.setVisibility(enabled ? View.VISIBLE  : View.GONE);
-			}
-		});
-		offerwallButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				AppsgeyserSDK.showAdWall(getActivity());
-			}
-		});
+		offerwallButton.setVisibility( View.GONE);
 
 		mStartGameButton = (ImageView) view.findViewById(R.id.start_game_button);
 		mStartGameButton.setImageDrawable(((GameApplication)getActivity().getApplication()).getConfig().getPlayButton());

@@ -6,4 +6,9 @@
     <string name="widgetID">6054702</string>
     <string name="app_metrica_on_start_event">{}</string>
     <string name="template_version">1.0</string>
+
+    <string name="admobAppId">ca-app-pub-3940256099942544~3347511713</string>
+
+    <string name="admobBannerId">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admobInterstitialId">ca-app-pub-3940256099942544/1033173712</string>
 </resources>
