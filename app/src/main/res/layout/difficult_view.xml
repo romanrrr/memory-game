@@ -19,7 +19,7 @@
             android:layout_marginLeft="14dp"
             android:layout_marginRight="14dp"
             android:layout_marginTop="22dp"
-            android:textColor="#fff"
+            android:textColor="#99000000"
             android:textStyle="bold"
             android:lines="1"
             android:textSize="@dimen/diff_text_size"/>

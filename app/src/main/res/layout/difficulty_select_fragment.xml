@@ -29,7 +29,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.snatik.matches.ui.DifficultyView
+            <ru.ryakovlev.jellypairs.ui.DifficultyView
                 android:id="@+id/select_difficulty_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,10 +40,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginBottom="18dp"
+                android:textColor="#99000000"
                 android:background="@drawable/window_panel_pause"
                 android:textSize="17sp" />
 
-            <com.snatik.matches.ui.DifficultyView
+            <ru.ryakovlev.jellypairs.ui.DifficultyView
                 android:id="@+id/select_difficulty_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,6 +54,8 @@
                 android:id="@+id/time_difficulty_4"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
+                android:textColor="#99000000"
+
                 android:background="@drawable/window_panel_pause"
                 android:textSize="17sp" />
 
@@ -70,7 +73,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.snatik.matches.ui.DifficultyView
+            <ru.ryakovlev.jellypairs.ui.DifficultyView
                 android:id="@+id/select_difficulty_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -80,10 +83,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginBottom="18dp"
+                android:textColor="#99000000"
+
                 android:background="@drawable/window_panel_pause"
                 android:textSize="17sp" />
 
-            <com.snatik.matches.ui.DifficultyView
+            <ru.ryakovlev.jellypairs.ui.DifficultyView
                 android:id="@+id/select_difficulty_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -92,6 +97,8 @@
                 android:id="@+id/time_difficulty_5"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
+                android:textColor="#99000000"
+
                 android:background="@drawable/window_panel_pause"
                 android:textSize="17sp" />
 
@@ -109,7 +116,7 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.snatik.matches.ui.DifficultyView
+            <ru.ryakovlev.jellypairs.ui.DifficultyView
                 android:id="@+id/select_difficulty_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -119,10 +126,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginBottom="18dp"
+                android:textColor="#99000000"
+
                 android:background="@drawable/window_panel_pause"
                 android:textSize="17sp" />
 
-            <com.snatik.matches.ui.DifficultyView
+            <ru.ryakovlev.jellypairs.ui.DifficultyView
                 android:id="@+id/select_difficulty_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -131,6 +140,8 @@
                 android:id="@+id/time_difficulty_6"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
+                android:textColor="#99000000"
+
                 android:background="@drawable/window_panel_pause"
                 android:textSize="17sp" />
 

@@ -1,68 +1,412 @@
 {
-  "logo": "uploaded_data\/logo.png",
-  "backgroundImage": "uploaded_data\/animals\/animals_10.png",
-
-  "playButton": "uploaded_data\/play.png",
-  "backButton": "uploaded_data\/back.png",
-  "soundButton": "uploaded_data\/sound.png",
-  "rateButton": "uploaded_data\/rate.png",
-  "cancelButton": "uploaded_data\/cancel.png",
-  "timeBar": "uploaded_data\/time_bar.png",
-  "settingsButton": "uploaded_data\/settings.png",
-  "settingsPopup": "uploaded_data\/settings_popup.png",
-  "levelPopup": "uploaded_data\/window_panel_popup.png",
-  "panel": "uploaded_data\/window_panel_pause.png",
-  "wonPanel": "uploaded_data\/won_panel.png",
+  "backgroundImage": "uploaded_data\/crop5ad22438dcb99.png",
+  "logo": "uploaded_data\/crop5ad2248313279.png",
+  "playButton": "uploaded_data\/crop5ad21955654ff.png",
+  "backButton": "uploaded_data\/crop5ad2195d9ee80.png",
+  "soundButton": "uploaded_data\/crop5ad2198022466.png",
+  "rateButton": "uploaded_data\/crop5ad21d8c360b6.png",
+  "cancelButton": "uploaded_data\/crop5ad219a4c043f.png",
+  "settingsButton": "uploaded_data\/crop5ad219ad1ffc6.png",
+  "timeBar": "uploaded_data\/crop5ad219b3a6838.png",
+  "settingsPopup": "uploaded_data\/crop5ad2227dcb448.png",
+  "levelPopup": "uploaded_data\/crop5ad21a8defa98.png",
+  "panel": "uploaded_data\/crop5ad21a96ea9e6.png",
+  "wonPanel": "uploaded_data\/crop5ad21c6d3f530.png",
   "levels": [
     {
-      "name": "Animals",
-      "levelBackgroundImage": "",
-      "levelLogo": "uploaded_data\/animals\/animals_10.png",
-      "tileBack": "",
-      "tileFront": "",
+      "name": "Easy",
+      "levelLogo": "uploaded_data\/crop5ad21cb141d1d.png",
+      "levelBackgroundImage": "uploaded_data\/crop5ad21ce87b913.png",
+      "tileBack": "uploaded_data\/crop5ad222a78d0f5.png",
+      "tileFront": "uploaded_data\/crop5ad222c8412d2.png",
       "tiles": [
         {
-          "path": "uploaded_data\/animals\/animals_10.png"
+          "path": "uploaded_data\/crop5ad21d63c822d.png",
+          "thumb": "uploaded_data\/thumb_crop5ad21d63c93f1.png"
         },
         {
-          "path": "uploaded_data\/animals\/animals_11.png"
+          "path": "uploaded_data\/crop5ad21d63c9c0a.png",
+          "thumb": "uploaded_data\/thumb_crop5ad21d63c9c4c.png"
         },
         {
-          "path": "uploaded_data\/animals\/animals_12.png"
+          "path": "uploaded_data\/crop5ad21d6409bc4.png",
+          "thumb": "uploaded_data\/thumb_crop5ad21d6409c09.png"
         },
         {
-          "path": "uploaded_data\/animals\/animals_13.png"
+          "path": "uploaded_data\/crop5ad21d640b767.png",
+          "thumb": "uploaded_data\/thumb_crop5ad21d640b7aa.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad21d64407d4.png",
+          "thumb": "uploaded_data\/thumb_crop5ad21d6440813.png"
         }
       ]
     },
     {
-      "name": "Pucheen",
-      "levelBackgroundImage": "uploaded_data\/animals\/animals_10.png",
-      "levelLogo": "uploaded_data\/pucheen\/1.png",
-      "tileBack": "uploaded_data\/window_panel_main.png",
-      "tileFront": "uploaded_data\/window_panel_main.png",
+      "name": "Medium",
+      "levelLogo": "uploaded_data\/crop5ad223ebec667.png",
+      "levelBackgroundImage": "uploaded_data\/crop5ad22400e8b8d.png",
+      "tileBack": "uploaded_data\/crop5ad22314e8f3f.png",
+      "tileFront": "uploaded_data\/crop5ad223250c480.png",
       "tiles": [
         {
-          "path": "uploaded_data\/pucheen\/1.png"
+          "path": "uploaded_data\/crop5ad22426c95cc.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22426c9610.png"
         },
         {
-          "path": "uploaded_data\/pucheen\/2.png"
+          "path": "uploaded_data\/crop5ad2242700d52.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242700d91.png"
         },
         {
-          "path": "uploaded_data\/pucheen\/3.png"
+          "path": "uploaded_data\/crop5ad2242708844.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242708884.png"
         },
         {
-          "path": "uploaded_data\/pucheen\/4.png"
+          "path": "uploaded_data\/crop5ad22427348a6.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22427348e3.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224273a435.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224273a473.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224276721c.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224276725c.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224276d952.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224276d995.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224279b3a8.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224279b3eb.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22427a11b0.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22427a11fc.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242800e41.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242800e87.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242802628.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224280266b.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224285aa5d.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224285aa9f.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224285bdf2.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224285be38.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22428b062f.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22428b0674.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22428b117e.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22428b11c5.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242914585.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22429145cd.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224291540e.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242915451.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224296a0f8.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224296a13c.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad224296b3d5.png",
+          "thumb": "uploaded_data\/thumb_crop5ad224296b4ec.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22429c35cf.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22429c360e.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22429c49e3.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22429c4a22.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242a2b30f.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242a2b34d.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242a30cee.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242a30d34.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242a909c9.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242a90a2e.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242a912fc.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242a91340.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242ad1348.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242ad138c.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242ad1e05.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242ad1e49.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242b15079.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242b150bb.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242b173af.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242b173f8.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2242b4a334.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2242b4a374.png"
+        }
+      ]
+    },
+    {
+      "name": "Hard",
+      "levelLogo": "uploaded_data\/crop5ad222f5b7f61.png",
+      "levelBackgroundImage": "",
+      "tileBack": "uploaded_data\/crop5ad2241b80b2a.png",
+      "tileFront": "uploaded_data\/crop5ad224124e123.png",
+      "tiles": [
+        {
+          "path": "uploaded_data\/crop5ad2230d0b91f.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230d0b95e.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230d3da43.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230d3da82.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230d3edd7.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230d3ee16.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230d712b8.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230d712f7.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230d726dc.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230d7271c.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230da3913.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230da3954.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230da6309.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230da6348.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230dd6b8d.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230dd6bcd.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230dd80d4.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230dd811a.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230e14eb0.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230e14ef0.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230e15d19.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230e15d58.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230e480f4.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230e48133.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230e49ce6.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230e49d2a.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230e7b06a.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230e7b0a9.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230e80179.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230e801b7.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230eacaa3.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230eacae1.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230eb1fb8.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230eb1ff6.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230edf05e.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230edf09c.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230ee4124.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230ee4162.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230f1c1e8.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230f1c226.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230f24470.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230f244af.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230f4e8de.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230f4e91d.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230f59e0d.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230f59e4c.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230f80f1c.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230f80f5a.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230f8d03c.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230f8d07c.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230fb3230.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230fb326e.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230fc2eec.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230fc2f2a.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2230fe4de0.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2230fe4e23.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2231000fd0.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2231001013.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22310259e2.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2231025a20.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22310362d1.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223103630f.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2231058f09.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2231058f48.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2231068750.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223106878f.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad223108a66a.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223108a6a8.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad223109bf88.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223109bfc6.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22310bbba0.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22310bbbde.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad223110b41d.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223110b45b.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2231138cbf.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2231138d08.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad223113d113.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223113d159.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad223116e2b7.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223116e2fe.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22311702c4.png",
+          "thumb": "uploaded_data\/thumb_crop5ad2231170311.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22311a26dd.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22311a271d.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22311a3dba.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22311a3df8.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22311d5ef0.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22311d5f0c.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22311d756a.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22311d75a8.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad223121328c.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22312132ca.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad2231215367.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22312153a5.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22312454cf.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223124550d.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad223124a592.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223124a5d0.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22312761cf.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223127620d.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad223127ca81.png",
+          "thumb": "uploaded_data\/thumb_crop5ad223127cabf.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22312a74c5.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22312a7502.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22312aec20.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22312aec5e.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22312d87da.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22312d8818.png"
+        },
+        {
+          "path": "uploaded_data\/crop5ad22312e0da7.png",
+          "thumb": "uploaded_data\/thumb_crop5ad22312e0de4.png"
         }
       ]
     }
   ],
-  "name": "FIND PAIRS",
+  "name": "Find the Paid for kids",
   "template": "findThePair",
   "icon": "uploaded_data\/icon.png",
   "themeColors": {
-    "colorPrimary": "#3f51b5",
-    "colorPrimaryDark": "#1a237e",
-    "colorAccent": "#536dfe"
+    "colorPrimary": "#2196f3",
+    "colorPrimaryDark": "#1976D2",
+    "colorAccent": "#448aff"
   }
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Memory Game</string>
-    <string name="debug">regular</string>
-    <string name="widgetID">6054702</string>
-    <string name="app_metrica_on_start_event">{}</string>
-    <string name="template_version">1.0</string>
+    <string name="app_name">Jelly Pairs</string>
+    <string name="debug" translatable="false">regular</string>
+    <string name="widgetID" translatable="false">6054702</string>
+    <string name="app_metrica_on_start_event" translatable="false">{}</string>
+    <string name="template_version" translatable="false">1.0</string>
 
-    <string name="admobAppId">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admobAppId" translatable="false">ca-app-pub-8875980189383028~1182764243</string>
 
-    <string name="admobBannerId">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admobInterstitialId">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admobBannerId" translatable="false">ca-app-pub-8875980189383028/6065347840</string>
+    <string name="admobInterstitialId" translatable="false">ca-app-pub-8875980189383028/2790170016</string>
 </resources>

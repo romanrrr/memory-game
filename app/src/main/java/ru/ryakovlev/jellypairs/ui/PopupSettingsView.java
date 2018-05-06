@@ -1,0 +1,78 @@
+package ru.ryakovlev.jellypairs.ui;
+
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import ru.ryakovlev.jellypairs.R;
+import ru.ryakovlev.jellypairs.common.Music;
+import ru.ryakovlev.jellypairs.common.Shared;
+import ru.ryakovlev.jellypairs.utils.FontLoader;
+import ru.ryakovlev.jellypairs.utils.FontLoader.Font;
+
+public class PopupSettingsView extends LinearLayout {
+
+	private ImageView mSoundImage;
+	private TextView mSoundText;
+
+	public PopupSettingsView(Context context) {
+		this(context, null);
+	}
+
+	public PopupSettingsView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		setOrientation(LinearLayout.VERTICAL);
+		Drawable settingsPopup = Shared.config.getSettingsPopup();
+		if(settingsPopup != null){
+			setBackgroundDrawable(settingsPopup);
+		}else {
+			setBackgroundResource(R.drawable.settings_popup);
+		}
+		LayoutInflater.from(getContext()).inflate(R.layout.popup_settings_view, this, true);
+		mSoundText = (TextView) findViewById(R.id.sound_off_text);
+		TextView rateView = (TextView) findViewById(R.id.rate_text);
+		FontLoader.setTypeface(context, new TextView[] { mSoundText, rateView }, Font.GROBOLD);
+		mSoundImage = (ImageView) findViewById(R.id.sound_image);
+		View soundOff = findViewById(R.id.sound_off);
+		soundOff.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Music.OFF = !Music.OFF;
+				setMusicButton();
+			}
+		});
+		ImageView rateIcon = (ImageView) findViewById(R.id.rate_icon);
+		rateIcon.setImageDrawable(Shared.config.getRateButton());
+		View rate = findViewById(R.id.rate);
+
+		rate.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				final String appPackageName = Shared.context.getPackageName();
+				try {
+					Shared.activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+				} catch (android.content.ActivityNotFoundException anfe) {
+					Shared.activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + appPackageName)));
+				}
+			}
+		});
+		setMusicButton();
+	}
+
+	private void setMusicButton() {
+		if (Music.OFF) {
+			mSoundText.setText("Sound OFF");
+			mSoundImage.setImageDrawable(Shared.config.getCancelButton());
+		} else {
+			mSoundText.setText("Sound ON");
+			mSoundImage.setImageDrawable(Shared.config.getSoundButton());
+		}
+	}
+}

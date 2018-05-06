@@ -5,11 +5,10 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "com.snatik.matches"
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 1006
-        versionName "1.0.06"
+        versionCode 1
+        versionName "1.0.0"
         multiDexEnabled true
     }
     dexOptions {
@@ -17,7 +16,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
